@@ -16,5 +16,11 @@ function loadPosts(){
     .then (json => console.log(json));
 }
 function displayUsers(json){
-    console.log(json)
+    const ul = document.getElementById('users');
+    for(const user of json){
+        console.log(user);
+        const li = document.createElement('li');
+        li.innerText = `Name: ${user.name} email: ${user.email}`;
+        ul.appendChild(li);
+    }
 }
